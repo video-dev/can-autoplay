@@ -1,0 +1,19 @@
+{
+  "name": "detect-autoplay",
+  "version": "1.0.0",
+  "main": "lib/index.js",
+  "author": "Caio Gondim <me@caiogondim.com>",
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {
+    "browserify": "^14.5.0",
+    "watchify": "^3.9.0",
+    "standard": "^10.0.3"
+  },
+  "scripts": {
+    "build": "browserify lib/index.js > build/detect-autoplay.js --standalone detectAutoplay",
+    "watch": "watchify lib/index.js -o build/detect-autoplay.js -v --standalone detectAutoplay",
+    "lint": "standard --fix 'lib/**/*.js' 'test/**/*.js'"
+  },
+  "dependencies": {}
+}

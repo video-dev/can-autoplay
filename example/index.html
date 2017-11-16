@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>detect-autoplay</title>
+</head>
+<body>
+  <script src="../build/detect-autoplay.js"></script>
+  <script>
+    detectAutoplay.video()
+      .then(() => console.log('video: ok'))
+      .catch(() => console.log('video: nope'))
+
+    detectAutoplay.videoMuted()
+      .then(() => console.log('video muted: ok'))
+      .catch(() => console.log('video muted: nope'))
+
+    detectAutoplay.audio()
+      .then(() => console.log('audio: ok'))
+      .catch(() => console.log('audio: nope'))
+  </script>
+</body>
+</html>
