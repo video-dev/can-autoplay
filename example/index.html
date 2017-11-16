@@ -2,22 +2,62 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>detect-autoplay</title>
+  <title>can-autoplay</title>
 </head>
 <body>
-  <script src="../build/detect-autoplay.js"></script>
+  <script src="../build/can-autoplay.js"></script>
   <script>
-    detectAutoplay.video()
-      .then(() => console.log('video: ok'))
-      .catch(() => console.log('video: nope'))
+    //
+    // Promise
+    //
 
-    detectAutoplay.videoMuted()
-      .then(() => console.log('video muted: ok'))
-      .catch(() => console.log('video muted: nope'))
+    canAutoplay.video().then(can => {
+      if (can) {
+        console.log('video: ok')
+      } else {
+        console.log('video: not')
+      }
+    })
 
-    detectAutoplay.audio()
-      .then(() => console.log('audio: ok'))
-      .catch(() => console.log('audio: nope'))
+    canAutoplay.videoMuted().then(can => {
+      if (can) {
+        console.log('video muted: ok')
+      } else {
+        console.log('video muted: not')
+      }
+    })
+
+    canAutoplay.audio().then(can => {
+      if (can) {
+        console.log('audio: ok')
+      } else {
+        console.log('audio: not')
+      }
+    })
+
+    //
+    // Await/async
+    //
+
+    ;(async () => {
+      if (await canAutoplay.video()) {
+        console.log('video: ok')
+      } else {
+        console.log('video: not')
+      }
+
+      if (await canAutoplay.videoMuted()) {
+        console.log('video muted: ok')
+      } else {
+        console.log('video muted: not')
+      }
+
+      if (await canAutoplay.audio()) {
+        console.log('audio: ok')
+      } else {
+        console.log('audio: not')
+      }
+    })()
   </script>
 </body>
 </html>

@@ -1,19 +1,22 @@
 {
-  "name": "detect-autoplay",
+  "name": "can-autoplay",
   "version": "1.0.0",
   "main": "lib/index.js",
   "author": "Caio Gondim <me@caiogondim.com>",
   "license": "MIT",
   "private": false,
   "devDependencies": {
+    "ava": "^0.23.0",
     "browserify": "^14.5.0",
-    "watchify": "^3.9.0",
-    "standard": "^10.0.3"
+    "puppeteer": "^0.13.0",
+    "standard": "^10.0.3",
+    "watchify": "^3.9.0"
   },
   "scripts": {
-    "build": "browserify lib/index.js > build/detect-autoplay.js --standalone detectAutoplay",
-    "watch": "watchify lib/index.js -o build/detect-autoplay.js -v --standalone detectAutoplay",
-    "lint": "standard --fix 'lib/**/*.js' 'test/**/*.js'"
+    "build": "browserify lib/index.js > build/can-autoplay.js --standalone canAutoplay",
+    "watch": "watchify lib/index.js -o build/can-autoplay.js -v --standalone canAutoplay",
+    "lint": "standard --fix 'lib/**/*.js' 'test/**/*.js'",
+    "test": "yarn build && ava test/"
   },
   "dependencies": {}
 }
