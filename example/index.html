@@ -5,59 +5,10 @@
   <title>can-autoplay</title>
 </head>
 <body>
-  <script src="../build/can-autoplay.js"></script>
-  <script>
-    //
-    // Promise
-    //
-
-    canAutoplay.video().then(can => {
-      if (can) {
-        console.log('video: ok')
-      } else {
-        console.log('video: not')
-      }
-    })
-
-    canAutoplay.videoMuted().then(can => {
-      if (can) {
-        console.log('video muted: ok')
-      } else {
-        console.log('video muted: not')
-      }
-    })
-
-    canAutoplay.audio().then(can => {
-      if (can) {
-        console.log('audio: ok')
-      } else {
-        console.log('audio: not')
-      }
-    })
-
-    //
-    // Await/async
-    //
-
-    ;(async () => {
-      if (await canAutoplay.video()) {
-        console.log('video: ok')
-      } else {
-        console.log('video: not')
-      }
-
-      if (await canAutoplay.videoMuted()) {
-        console.log('video muted: ok')
-      } else {
-        console.log('video muted: not')
-      }
-
-      if (await canAutoplay.audio()) {
-        console.log('audio: ok')
-      } else {
-        console.log('audio: not')
-      }
-    })()
-  </script>
+  <h1>can-autoplay</h1>
+  <ul>
+    <li><a href="./promise.html">Promise</a><br></li>
+    <li><a href="./async-await.html">async/await</a></li>
+  </ul>
 </body>
 </html>
