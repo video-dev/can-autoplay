@@ -1,3 +1,11 @@
+<h1 align="center">can-autoplay.js</h1>
+
+<div align="center">
+ <img src="http://img.badgesize.io/video-dev/can-autoplay.js/master/build/can-autoplay.min.js?compression=gzip">
+</div>
+
+<br>
+
 Work in Progress
 
 ## Instalation
