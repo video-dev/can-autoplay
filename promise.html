@@ -12,29 +12,33 @@
     <li class='audio'>audio</li>
   </ul>
 
-  <script src="../build/can-autoplay.js"></script>
+  <script src="./build/can-autoplay.js"></script>
   <script>
     const $ = document.querySelector.bind(document)
 
-    ;(async () => {
-      if (await canAutoplay.video()) {
+    canAutoplay.video().then(can => {
+      if (can) {
         $('.video').innerText += ' ✅'
       } else {
         $('.video').innerText += ' 🚫'
       }
+    })
 
-      if (await canAutoplay.videoMuted()) {
+    canAutoplay.videoMuted().then(can => {
+      if (can) {
         $('.videoMuted').innerText += ' ✅'
       } else {
         $('.videoMuted').innerText += ' 🚫'
       }
+    })
 
-      if (await canAutoplay.audio()) {
+    canAutoplay.audio().then(can => {
+      if (can) {
         $('.audio').innerText += ' ✅'
       } else {
         $('.audio').innerText += ' 🚫'
       }
-    })()
+    })
   </script>
 </body>
 </html>
