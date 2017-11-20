@@ -16,47 +16,17 @@ npm install can-autoplay
 
 ## API
 
-### `canAutoplay.video()`
+### `audio(options)`
 
-```js
-// Promise API
-canAutoplay.video().then(result => {
-  if (result) {
-    // Can autoplay
-  } else {
-    // Can not autoplay
-  }
-})
+Parameters:
 
-// async/await API
-if (await canAutoplay.video()) {
-  // Can autoplay
-} else {
-  // Can not autoplay
-}
-```
+- options.muted `<Boolean>`, check if auto-play is possible for a muted content
+- options.timeout `<Number>`, timeout for a check, default value is `250` ms
 
-### `canAutoplay.videoMuted()`
+Returns:
 
-```js
-// Promise API
-canAutoplay.videoMuted().then(result => {
-  if (result) {
-    // Can autoplay
-  } else {
-    // Can not autoplay
-  }
-})
+- `<Promise>`, resoles to a `<Boolean>`, `true` - if auto-play is possible
 
-// async/await API
-if (await canAutoplay.videoMuted()) {
-  // Can autoplay
-} else {
-  // Can not autoplay
-}
-```
-
-### `canAutoplay.audio()`
 
 ```js
 // Promise API
@@ -70,6 +40,35 @@ canAutoplay.audio().then(result => {
 
 // async/await API
 if (await canAutoplay.audio()) {
+  // Can autoplay
+} else {
+  // Can not autoplay
+}
+```
+
+### `video(options)`
+
+Parameters:
+
+- options.muted `<Boolean>`, check if auto-play is possible for a muted content
+- options.timeout `<Number>`, timeout for a check, default value is `250` ms
+
+Returns:
+
+- `<Promise>`, resoles to a `<Boolean>`, `true` - if auto-play is possible
+
+```js
+// Promise API
+canAutoplay.video().then(result => {
+  if (result) {
+    // Can autoplay
+  } else {
+    // Can not autoplay
+  }
+})
+
+// async/await API
+if (await canAutoplay.video()) {
   // Can autoplay
 } else {
   // Can not autoplay
