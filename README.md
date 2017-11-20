@@ -46,6 +46,20 @@ if (await canAutoplay.audio()) {
 }
 ```
 
+### `getError()`
+
+Returns:
+
+- `<Error>`, internal or timeout Error object
+
+```js
+canAutoplay.video({mute: true}).then(result => {
+  if(result === false){
+    console.warn('Error did occur: ', canAutoplay.getError())
+  }
+})
+```
+
 ### `video(options)`
 
 Parameters:
