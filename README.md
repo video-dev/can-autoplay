@@ -6,9 +6,9 @@
 
 <br>
 
-Work in Progress
+The auto-play feature detection in HTMLMediaElement (`<audio>` or `<video>`).
 
-## Instalation
+## Installation
 
 ```
 npm install can-autoplay
@@ -32,18 +32,11 @@ Returns:
 // Promise API
 canAutoplay.audio().then(result => {
   if (result) {
-    // Can autoplay
+    // Can auto-play
   } else {
-    // Can not autoplay
+    // Can not auto-play
   }
 })
-
-// async/await API
-if (await canAutoplay.audio()) {
-  // Can autoplay
-} else {
-  // Can not autoplay
-}
 ```
 
 ### `getError()`
@@ -80,11 +73,17 @@ canAutoplay.video().then(result => {
     // Can not autoplay
   }
 })
+```
 
-// async/await API
-if (await canAutoplay.video()) {
-  // Can autoplay
+Example for Async/Await:
+
+```js
+import canAutoPlay from 'can-autoplay';
+
+if (await canAutoPlay.video({timeout: 100, muted: true})) {
+  // Auto-play is possible
 } else {
-  // Can not autoplay
+  // Auto-play is prevented
+  // If necessary, get error to find more info: canAutoPlay.getError()
 }
 ```
