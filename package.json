@@ -10,7 +10,6 @@
     "browserify": "^14.5.0",
     "google-closure-compiler-js": "^20170910.0.1",
     "jsdom": "^11.4.0",
-    "puppeteer": "^0.13.0",
     "standard": "^10.0.3",
     "watchify": "^3.9.0"
   },
