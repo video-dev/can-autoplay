@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - Changed playback detection to rely on browser's `play()` Promise API
 - Changed documentation to include examples with Promise API
 - Removed `videoMuted` method in favor of generic API for `video` and `audio`
+- Removed `DOM` invalidation
 
 ## [1.0.1] - 2017-11-17
 
