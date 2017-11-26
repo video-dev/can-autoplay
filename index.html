@@ -16,6 +16,7 @@
 <script src="./build/can-autoplay.js"></script>
 <script>
   const $ = document.querySelector.bind(document)
+  let testSequence = Promise.resolve()
   let tests = [
     {selector: '.video', method: 'video', params: null},
     {selector: '.videoMuted', method: 'video', params: {muted: true}},
@@ -24,9 +25,15 @@
   ]
 
   tests.forEach(test => {
-    canAutoplay[test.method](test.params).then(result => {
-      $(test.selector).innerText += (result === true) ? ' ✅' : ' 🚫'
-    })
+    testSequence = testSequence
+      .then(() => {
+        return canAutoplay[test.method](test.params).then(result => {
+          $(test.selector).innerText += (result === true) ? ' ✅' : ' 🚫'
+        })
+      })
+      .then(() => {
+        return new Promise(resolve => setTimeout(resolve, 1000))
+      })
   })
 </script>
 </body>
