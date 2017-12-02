@@ -1,6 +1,5 @@
 (function(f){if(typeof exports==="object"&&typeof module!=="undefined"){module.exports=f()}else if(typeof define==="function"&&define.amd){define([],f)}else{var g;if(typeof window!=="undefined"){g=window}else if(typeof global!=="undefined"){g=global}else if(typeof self!=="undefined"){g=self}else{g=this}g.canAutoplay = f()}})(function(){var define,module,exports;return (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 const media = require('./media')
-let error = null
 
 function audio (options) {
   return startPlayback(setupDefaultValues(options), () => {
@@ -9,10 +8,6 @@ function audio (options) {
       source: media.AUDIO
     }
   })
-}
-
-function getError () {
-  return error
 }
 
 function setupDefaultValues (options) {
@@ -25,29 +20,23 @@ function startPlayback ({muted, timeout}, elementCallback) {
   let timeoutId
   let sendOutput
 
-  error = null
-
   element.muted = muted
   element.src = source
 
   return new Promise(resolve => {
     playResult = element.play()
     timeoutId = setTimeout(() => {
-      error = new Error(`Timeout ${timeout} ms has been reached`)
-      sendOutput(false)
+      sendOutput(false, new Error(`Timeout ${timeout} ms has been reached`))
     }, timeout)
-    sendOutput = result => {
+    sendOutput = (result, error = null) => {
       clearTimeout(timeoutId)
-      resolve(result)
+      resolve({result, error})
     }
 
     if (playResult !== undefined) {
       playResult
         .then(() => sendOutput(true))
-        .catch(playError => {
-          error = playError
-          sendOutput(false)
-        })
+        .catch(playError => sendOutput(false, playError))
     } else {
       sendOutput(true)
     }
@@ -63,7 +52,7 @@ function video (options) {
   })
 }
 
-module.exports = {audio, getError, video}
+module.exports = {audio, video}
 
 },{"./media":2}],2:[function(require,module,exports){
 module.exports = {
