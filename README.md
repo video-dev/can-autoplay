@@ -6,9 +6,9 @@
 
 <br>
 
-Work in Progress
+The auto-play feature detection in HTMLMediaElement (`<audio>` or `<video>`).
 
-## Instalation
+## Installation
 
 ```
 npm install can-autoplay
@@ -16,7 +16,53 @@ npm install can-autoplay
 
 ## API
 
-### `canAutoplay.video()`
+### `audio(options)`
+
+Parameters:
+
+- options.muted `<Boolean>`, check if auto-play is possible for a muted content
+- options.timeout `<Number>`, timeout for a check, default value is `250` ms
+
+Returns:
+
+- `<Promise>`, resoles to a `<Boolean>`, `true` - if auto-play is possible
+
+
+```js
+// Promise API
+canAutoplay.audio().then(result => {
+  if (result) {
+    // Can auto-play
+  } else {
+    // Can not auto-play
+  }
+})
+```
+
+### `getError()`
+
+Returns:
+
+- `<Error>`, internal or timeout Error object
+
+```js
+canAutoplay.video({mute: true}).then(result => {
+  if(result === false){
+    console.warn('Error did occur: ', canAutoplay.getError())
+  }
+})
+```
+
+### `video(options)`
+
+Parameters:
+
+- options.muted `<Boolean>`, check if auto-play is possible for a muted content
+- options.timeout `<Number>`, timeout for a check, default value is `250` ms
+
+Returns:
+
+- `<Promise>`, resoles to a `<Boolean>`, `true` - if auto-play is possible
 
 ```js
 // Promise API
@@ -27,51 +73,17 @@ canAutoplay.video().then(result => {
     // Can not autoplay
   }
 })
-
-// async/await API
-if (await canAutoplay.video()) {
-  // Can autoplay
-} else {
-  // Can not autoplay
-}
 ```
 
-### `canAutoplay.videoMuted()`
+Example for Async/Await:
 
 ```js
-// Promise API
-canAutoplay.videoMuted().then(result => {
-  if (result) {
-    // Can autoplay
-  } else {
-    // Can not autoplay
-  }
-})
+import canAutoPlay from 'can-autoplay';
 
-// async/await API
-if (await canAutoplay.videoMuted()) {
-  // Can autoplay
+if (await canAutoPlay.video({timeout: 100, muted: true})) {
+  // Auto-play is possible
 } else {
-  // Can not autoplay
-}
-```
-
-### `canAutoplay.audio()`
-
-```js
-// Promise API
-canAutoplay.audio().then(result => {
-  if (result) {
-    // Can autoplay
-  } else {
-    // Can not autoplay
-  }
-})
-
-// async/await API
-if (await canAutoplay.audio()) {
-  // Can autoplay
-} else {
-  // Can not autoplay
+  // Auto-play is prevented
+  // If necessary, get error to find more info: canAutoPlay.getError()
 }
 ```
