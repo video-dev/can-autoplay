@@ -17,7 +17,7 @@ Table of contents:
 - [API](#api)
   - [`audio(options)`](#audiooptions)
   - [`video(options)`](#videooptions)
-- [Example:](#example)
+- [Example](#example)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
