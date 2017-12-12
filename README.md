@@ -5,6 +5,8 @@ The auto-play feature detection in HTMLMediaElement (`<audio>` or `<video>`).
 ![FileSize](http://img.badgesize.io/video-dev/can-autoplay/master/build/can-autoplay.min.js#1?compression=gzip)
 ![Version](https://img.shields.io/npm/v/can-autoplay.svg)
 
+[Demo page](https://video-dev.github.io/can-autoplay/)
+
 ## Installation
 
 ```
