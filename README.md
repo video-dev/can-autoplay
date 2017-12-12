@@ -1,12 +1,9 @@
-<h1 align="center">can-autoplay.js</h1>
-
-<div align="center">
- <img src="http://img.badgesize.io/video-dev/can-autoplay/master/build/can-autoplay.min.js#1?compression=gzip">
-</div>
-
-<br>
+# can-autoplay.js
 
 The auto-play feature detection in HTMLMediaElement (`<audio>` or `<video>`).
+
+![FileSize](http://img.badgesize.io/video-dev/can-autoplay/master/build/can-autoplay.min.js#1?compression=gzip)
+![Version](https://img.shields.io/npm/v/can-autoplay.svg)
 
 ## Installation
 
