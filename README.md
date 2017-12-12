@@ -44,7 +44,7 @@ Returns:
 
 
 ```js
-canAutoplay.audio().then({result} => {
+canAutoplay.audio().then(({result}) => {
   if (result === true) {
     // Can auto-play
   } else {
