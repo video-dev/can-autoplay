@@ -76,7 +76,7 @@ canAutoplay.video().then(({result}) => {
 })
 ```
 
-## Example:
+## Example
 
 ```js
 import canAutoPlay from 'can-autoplay';
