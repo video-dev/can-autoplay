@@ -13,9 +13,11 @@ Table of contents:
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
  
 
-- [General](#general)
-- [Code Example](#code-example)
-- [TODO](#todo)
+- [Installation](#installation)
+- [API](#api)
+  - [`audio(options)`](#audiooptions)
+  - [`video(options)`](#videooptions)
+- [Example:](#example)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
