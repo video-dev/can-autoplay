@@ -7,6 +7,18 @@ The auto-play feature detection in HTMLMediaElement (`<audio>` or `<video>`).
 
 [Demo page](https://video-dev.github.io/can-autoplay/)
 
+Table of contents:
+
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+ 
+
+- [General](#general)
+- [Code Example](#code-example)
+- [TODO](#todo)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ## Installation
 
 ```
