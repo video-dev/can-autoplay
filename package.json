@@ -1,30 +1,37 @@
 {
   "name": "can-autoplay",
   "version": "2.0.1",
-  "main": "lib/index.js",
+  "main": "build/can-autoplay.cjs.js",
+  "module": "build/can-autoplay.es.js",
+  "browser": "build/can-autoplay.js",
   "author": "Caio Gondim <me@caiogondim.com>",
   "license": "MIT",
   "private": false,
   "devDependencies": {
     "ava": "^0.23.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-register": "^6.26.0",
     "browserify": "^14.5.0",
     "google-closure-compiler-js": "^20170910.0.1",
     "jsdom": "^11.4.0",
+    "rollup": "^0.55.1",
+    "rollup-plugin-babel": "^3.0.3",
     "standard": "^10.0.3",
     "watchify": "^3.9.0"
   },
   "scripts": {
-    "build": "browserify lib/index.js > build/can-autoplay.js --standalone canAutoplay && google-closure-compiler-js 2>/dev/null build/can-autoplay.js > build/can-autoplay.min.js --languageOut=ES6",
-    "watch": "watchify lib/index.js -o build/can-autoplay.js -v --standalone canAutoplay",
+    "build": "rollup -c",
+    "minify": "google-closure-compiler-js 2>/dev/null build/can-autoplay.js > build/can-autoplay.min.js --languageOut=ES6",
+    "watch": "rollup -c -w",
     "lint": "standard --fix 'lib/**/*.js' 'test/**/*.js'",
     "test": "ava"
   },
-  "dependencies": {},
   "ava": {
     "files": [
       "test/*.spec.js"
     ],
     "require": [
+      "babel-register",
       "./test/setup.js"
     ]
   }
