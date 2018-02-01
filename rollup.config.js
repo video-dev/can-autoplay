@@ -12,6 +12,7 @@ export default [
     },
     plugins: [
       babel({
+        babelrc: false,
         exclude: ['node_modules/**'],
         "presets": [
           ["env", {
@@ -38,6 +39,7 @@ export default [
     ],
     plugins: [
       babel({
+        babelrc: false,
         exclude: ['node_modules/**'],
         "presets": [
           ["env", {
