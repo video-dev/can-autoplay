@@ -14,6 +14,7 @@ Table of contents:
  
 
 - [Installation](#installation)
+- [Files](#files)
 - [API](#api)
   - [`audio(options)`](#audiooptions)
   - [`video(options)`](#videooptions)
@@ -26,6 +27,10 @@ Table of contents:
 ```
 npm install can-autoplay
 ```
+
+## Files
+
+Build files are available in the `build/` directory. Bundlers will choose get the correct file chosen for them but if you just want to include it on the page, grab the `build/can-autoplay.js` file.
 
 ## API
 
