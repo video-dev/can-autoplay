@@ -6,8 +6,8 @@ export default [
   {
     input: 'lib/index.js',
     output: {
-      name: 'can-autoplay',
-      file: pkg.browser,
+      name: 'canAutoplay',
+      file: 'build/can-autoplay.js',
       format: 'umd',
     },
     plugins: [
