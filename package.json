@@ -3,7 +3,6 @@
   "version": "2.0.1",
   "main": "build/can-autoplay.cjs.js",
   "module": "build/can-autoplay.es.js",
-  "browser": "build/can-autoplay.js",
   "author": "Caio Gondim <me@caiogondim.com>",
   "license": "MIT",
   "private": false,
