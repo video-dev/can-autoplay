@@ -62,4 +62,4 @@ function video(options) {
   });
 }
 
-module.exports = { audio: audio, video: video };
+export { audio, video };
