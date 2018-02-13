@@ -38,6 +38,7 @@ Build files are available in the `build/` directory. Bundlers will choose get th
 
 Parameters:
 
+- options.inline `<Boolean>`, check if auto-play is possible for an inline playback, default value is `false`
 - options.muted `<Boolean>`, check if auto-play is possible for a muted content
 - options.timeout `<Number>`, timeout for a check, default value is `250` ms
 
@@ -62,6 +63,7 @@ canAutoplay.audio().then(({result}) => {
 
 Parameters:
 
+- options.inline `<Boolean>`, check if auto-play is possible for an inline playback, default value is `false`
 - options.muted `<Boolean>`, check if auto-play is possible for a muted content
 - options.timeout `<Number>`, timeout for a check, default value is `250` ms
 
