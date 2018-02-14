@@ -24,7 +24,7 @@
     "lint": "standard --fix 'lib/**/*.js' 'test/**/*.js'",
     "doc": "doctoc README.md",
     "test": "ava",
-    "prepublish": "yarn test && yarn build"
+    "prepublish": "yarn test && yarn build && yarn minify"
   },
   "ava": {
     "files": [
