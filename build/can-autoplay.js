@@ -34,12 +34,13 @@ function audio(options) {
 }
 
 function setupDefaultValues(options) {
-  return Object.assign({ muted: false, timeout: 250 }, options);
+  return Object.assign({ muted: false, timeout: 250, inline: false }, options);
 }
 
 function startPlayback(_ref, elementCallback) {
   var muted = _ref.muted,
-      timeout = _ref.timeout;
+      timeout = _ref.timeout,
+      inline = _ref.inline;
 
   var _elementCallback = elementCallback(),
       element = _elementCallback.element,
@@ -50,6 +51,15 @@ function startPlayback(_ref, elementCallback) {
   var sendOutput = void 0;
 
   element.muted = muted;
+  if (muted === true) {
+    element.setAttribute('muted', 'muted');
+  }
+  // indicates that the video is to be played "inline",
+  // that is within the element's playback area.
+  if (inline === true) {
+    element.setAttribute('playsinline', 'playsinline');
+  }
+
   element.src = source;
 
   return new Promise(function (resolve) {
