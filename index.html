@@ -9,6 +9,8 @@
 <ul>
     <li class='video'>video</li>
     <li class='videoMuted'>video muted</li>
+    <li class='videoInline'>video inline</li>
+    <li class='videoInlineMuted'>video inline muted</li>
     <li class='audio'>audio</li>
     <li class='audioMuted'>audio muted</li>
 </ul>
@@ -19,6 +21,8 @@
   let tests = [
     {selector: '.video', method: 'video', params: null},
     {selector: '.videoMuted', method: 'video', params: {muted: true}},
+    {selector: '.videoInline', method: 'video', params: {inline: true}},
+    {selector: '.videoInlineMuted', method: 'video', params: {inline: true, muted: true}},
     {selector: '.audio', method: 'audio', params: null},
     {selector: '.audioMuted', method: 'audio', params: {muted: true}}
   ]
