@@ -7,7 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [2.2.1] - 2018-02-13
 
-- Fixed build
+- Fixed build by adding missed bundled files
 
 ## [2.2.0] - 2018-02-13
 
