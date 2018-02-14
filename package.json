@@ -1,6 +1,6 @@
 {
   "name": "can-autoplay",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "main": "build/can-autoplay.cjs.js",
   "module": "build/can-autoplay.es.js",
   "author": "Caio Gondim <me@caiogondim.com>",
