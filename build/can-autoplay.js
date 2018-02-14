@@ -50,6 +50,8 @@ function startPlayback(_ref, elementCallback) {
   var sendOutput = void 0;
 
   element.muted = muted;
+  // Safari doesnt allow not-inline autoplay.
+  element.setAttribute('playsinline', true);
   element.src = source;
 
   return new Promise(function (resolve) {
