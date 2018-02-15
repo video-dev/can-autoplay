@@ -21,9 +21,9 @@
     "build": "rollup -c",
     "minify": "google-closure-compiler-js 2>/dev/null build/can-autoplay.js > build/can-autoplay.min.js",
     "watch": "rollup -c -w",
-    "lint": "standard --fix 'lib/**/*.js' 'test/**/*.js'",
+    "lint": "standard 'lib/**/*.js' 'test/**/*.js'",
     "doc": "doctoc README.md",
-    "test": "ava"
+    "test": "ava && yarn run lint"
   },
   "ava": {
     "files": [
