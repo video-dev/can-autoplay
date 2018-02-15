@@ -28,7 +28,7 @@ function audio(options) {
   return startPlayback(setupDefaultValues(options), function () {
     return {
       element: document.createElement('audio'),
-      source: AUDIO
+      source: URL.createObjectURL(base64toBlob(AUDIO))
     };
   });
 }
@@ -90,9 +90,34 @@ function video(options) {
   return startPlayback(setupDefaultValues(options), function () {
     return {
       element: document.createElement('video'),
-      source: VIDEO
+      source: URL.createObjectURL(base64toBlob(VIDEO))
     };
   });
+}
+
+function base64toBlob(base64) {
+  var base64Regex = /^data:([^;]+);base64,(.+)$/i;
+  var matches = base64.match(base64Regex);
+  var contentType = matches[1];
+  var base64Data = matches[2];
+
+  var sliceSize = 1024;
+  var byteCharacters = atob(base64Data);
+  var bytesLength = byteCharacters.length;
+  var slicesCount = Math.ceil(bytesLength / sliceSize);
+  var byteArrays = new Array(slicesCount);
+
+  for (var sliceIndex = 0; sliceIndex < slicesCount; ++sliceIndex) {
+    var begin = sliceIndex * sliceSize;
+    var end = Math.min(begin + sliceSize, bytesLength);
+
+    var bytes = new Array(end - begin);
+    for (var offset = begin, i = 0; offset < end; ++i, ++offset) {
+      bytes[i] = byteCharacters[offset].charCodeAt(0);
+    }
+    byteArrays[sliceIndex] = new Uint8Array(bytes);
+  }
+  return new Blob(byteArrays, { type: contentType });
 }
 
 var index = { audio: audio, video: video };
