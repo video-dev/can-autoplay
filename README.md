@@ -11,7 +11,7 @@ Table of contents:
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
- 
+
 
 - [Installation](#installation)
 - [Files](#files)
@@ -41,10 +41,11 @@ Parameters:
 - options.inline `<Boolean>`, check if auto-play is possible for an inline playback, default value is `false`
 - options.muted `<Boolean>`, check if auto-play is possible for a muted content
 - options.timeout `<Number>`, timeout for a check, default value is `250` ms
+- options.blob `<Boolean>`, to use a blob media source instead of base64. Useful to bypass CSP. Default value is `false`
 
 Returns:
 
-- `<Promise>`, resoles to a `<Object>`: 
+- `<Promise>`, resoles to a `<Object>`:
   - `result <Boolean>`, `true` - if auto-play is possible
   - `error <Error>`, internal or timeout Error object
 
@@ -66,6 +67,7 @@ Parameters:
 - options.inline `<Boolean>`, check if auto-play is possible for an inline playback, default value is `false`
 - options.muted `<Boolean>`, check if auto-play is possible for a muted content
 - options.timeout `<Number>`, timeout for a check, default value is `250` ms
+- options.blob `<Boolean>`, to use a blob media source instead of base64. Useful to bypass CSP. Default value is `false`
 
 Returns:
 
