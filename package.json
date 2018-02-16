@@ -23,7 +23,8 @@
     "watch": "rollup -c -w",
     "lint": "standard 'lib/**/*.js' 'test/**/*.js'",
     "doc": "doctoc README.md",
-    "test": "ava && yarn run lint"
+    "test": "ava && yarn run lint",
+    "prepublishOnly": "yarn test && yarn build && yarn minify"
   },
   "ava": {
     "files": [

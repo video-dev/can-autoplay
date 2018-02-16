@@ -13,6 +13,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 - Added option `blob` to use blob as media source instead of base64
 
+## [2.2.1] - 2018-02-13
+
+- Fixed build by adding missed bundled files
+
 ## [2.2.0] - 2018-02-13
 
 - Added option `inline` to check auto-play for inline playback
