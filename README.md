@@ -42,7 +42,6 @@ Parameters:
 - options.inline `<Boolean>`, check if auto-play is possible for an inline playback, default value is `false`
 - options.muted `<Boolean>`, check if auto-play is possible for a muted content
 - options.timeout `<Number>`, timeout for a check, default value is `250` ms
-- options.blob `<Boolean>`, to use a blob media source instead of base64. Useful to bypass CSP. Default value is `false`
 
 Returns:
 
@@ -68,7 +67,6 @@ Parameters:
 - options.inline `<Boolean>`, check if auto-play is possible for an inline playback, default value is `false`
 - options.muted `<Boolean>`, check if auto-play is possible for a muted content
 - options.timeout `<Number>`, timeout for a check, default value is `250` ms
-- options.blob `<Boolean>`, to use a blob media source instead of base64. Useful to bypass CSP. Default value is `false`
 
 Returns:
 
