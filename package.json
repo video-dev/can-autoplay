@@ -1,6 +1,6 @@
 {
   "name": "can-autoplay",
-  "version": "2.2.2-0",
+  "version": "2.3.2",
   "main": "build/can-autoplay.cjs.js",
   "module": "build/can-autoplay.es.js",
   "author": "Caio Gondim <me@caiogondim.com>",
@@ -21,9 +21,9 @@
     "build": "rollup -c",
     "minify": "google-closure-compiler-js 2>/dev/null build/can-autoplay.js > build/can-autoplay.min.js",
     "watch": "rollup -c -w",
-    "lint": "standard --fix 'lib/**/*.js' 'test/**/*.js'",
+    "lint": "standard 'lib/**/*.js' 'test/**/*.js'",
     "doc": "doctoc README.md",
-    "test": "ava",
+    "test": "ava && yarn run lint",
     "prepublishOnly": "yarn test && yarn build && yarn minify"
   },
   "ava": {
