@@ -8,7 +8,7 @@ export default [
     output: {
       name: 'canAutoplay',
       file: 'build/can-autoplay.js',
-      format: 'umd',
+      format: 'umd'
     },
     plugins: [
       babel({
