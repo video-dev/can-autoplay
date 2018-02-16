@@ -19,6 +19,7 @@ Table of contents:
   - [`audio(options)`](#audiooptions)
   - [`video(options)`](#videooptions)
 - [Example](#example)
+- [Media](#media)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -98,3 +99,8 @@ canAutoPlay
         }
     })
 ```
+
+## Media
+
+- `audio.mp3`. Created by Weston Ruter (@westonruter). Smallest possible (<0.000001 seconds long) audio file.
+- `video.mp4`. Source: https://github.com/mathiasbynens/small
