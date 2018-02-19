@@ -12,7 +12,6 @@ export default [
       { file: pkg.module, format: 'es' }
     ],
     plugins: [
-
       babel({
         babelrc: false,
         exclude: ['node_modules/**'],

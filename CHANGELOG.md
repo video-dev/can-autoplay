@@ -5,9 +5,22 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [3.0.0] - TBD
+
+- Added pre-compilation step with Blob Generator
+- Changed core implementation where it's now based on blobs
+- Changed small media structure where media is stored as a separate local file
+- Changed unit tests to work with blob based implementation
+- Changed Rollup build to have all builds unified in a single step
+- Changed AVA dependency to `0.25.0`
+
+## [2.3.2] - 2018-02-15
+
+- Fixed build by adding missed minified file
+
 ## [2.3.1] - 2018-02-15
 
-- Update build files
+- Fixed build by adding missed bundled files for CommonJS and ES6 variants
 
 ## [2.3.0] - 2018-02-15
 
