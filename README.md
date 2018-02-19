@@ -20,6 +20,7 @@ Table of contents:
   - [`video(options)`](#videooptions)
 - [Example](#example)
 - [Media](#media)
+- [Implementation Details](#implementation-details)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -102,3 +103,7 @@ canAutoPlay
 
 - `audio.mp3`. Created by Weston Ruter (@westonruter). Smallest possible (<0.000001 seconds long) audio file.
 - `video.mp4`. Source: https://github.com/mathiasbynens/small
+
+## Implementation Details
+
+If it's required to have a legacy browser support you could use latest `v2.x.x` version of the library.
