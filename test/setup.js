@@ -7,6 +7,8 @@ global.window = dom.window
 global.navigator = {
   userAgent: 'node.js'
 }
+global.Blob = function () {}
+global.URL = {createObjectURL: function () {}}
 
 Object.keys(dom.window).forEach(property => {
   if (typeof global[property] === 'undefined') {

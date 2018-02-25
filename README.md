@@ -19,6 +19,8 @@ Table of contents:
   - [`audio(options)`](#audiooptions)
   - [`video(options)`](#videooptions)
 - [Example](#example)
+- [Media](#media)
+- [Implementation Details](#implementation-details)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
@@ -41,7 +43,6 @@ Parameters:
 - options.inline `<Boolean>`, check if auto-play is possible for an inline playback, default value is `false`
 - options.muted `<Boolean>`, check if auto-play is possible for a muted content
 - options.timeout `<Number>`, timeout for a check, default value is `250` ms
-- options.blob `<Boolean>`, to use a blob media source instead of base64. Useful to bypass CSP. Default value is `false`
 
 Returns:
 
@@ -67,7 +68,6 @@ Parameters:
 - options.inline `<Boolean>`, check if auto-play is possible for an inline playback, default value is `false`
 - options.muted `<Boolean>`, check if auto-play is possible for a muted content
 - options.timeout `<Number>`, timeout for a check, default value is `250` ms
-- options.blob `<Boolean>`, to use a blob media source instead of base64. Useful to bypass CSP. Default value is `false`
 
 Returns:
 
@@ -98,3 +98,12 @@ canAutoPlay
         }
     })
 ```
+
+## Media
+
+- `audio.mp3`. Created by Weston Ruter (@westonruter). Smallest possible (<0.000001 seconds long) audio file.
+- `video.mp4`. Source: https://github.com/mathiasbynens/small
+
+## Implementation Details
+
+If it's required to have a legacy browser support you could use latest `v2.x.x` version of the library.
