@@ -46,7 +46,7 @@ Parameters:
 
 Returns:
 
-- `<Promise>`, resoles to a `<Object>`:
+- `<Promise>`, resolves to a `<Object>`:
   - `result <Boolean>`, `true` - if auto-play is possible
   - `error <Error>`, internal or timeout Error object
 
