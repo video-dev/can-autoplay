@@ -54,6 +54,10 @@ function startPlayback(_ref, elementCallback) {
     sendOutput = function sendOutput(result) {
       var error = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
 
+      // Clean up to avoid MediaElementLeak
+      element.remove();
+      element.srcObject = null;
+
       clearTimeout(timeoutId);
       resolve({ result: result, error: error });
     };
