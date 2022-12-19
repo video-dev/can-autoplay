@@ -14,12 +14,12 @@ let code = `/* global Blob */
 /**
  * @type {Blob}
  */
-export const AUDIO = new Blob([new Uint8Array([${[...audioFile].join(', ')}])], {type: '${audioMimeType}'})
+export const AUDIO = typeof window !== 'undefined' ? new Blob([new Uint8Array([${[...audioFile].join(', ')}])], {type: '${audioMimeType}'}) : undefined
 
 /**
  * @type {Blob}
  */
-export const VIDEO = new Blob([new Uint8Array([${[...videoFile].join(', ')}])], {type: '${videoMimeType}'})
+export const VIDEO = typeof window !== 'undefined' ? new Blob([new Uint8Array([${[...videoFile].join(', ')}])], {type: '${videoMimeType}'}) : undefined
 `;
 
 console.log('Writing file...');
